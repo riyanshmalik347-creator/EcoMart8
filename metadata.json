@@ -1,0 +1,6 @@
+{
+  "name": "EcoMart - Sustainable Shopping",
+  "description": "Don’t Just Shop. Shop With Purpose. Discover eco-friendly home, kitchen, personal care, fashion, and reusables with verified Eco Scores and an intelligent AI shopping assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

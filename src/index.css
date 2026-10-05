@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-serif: 'Fraunces', Georgia, serif;
+    
+    /* Base neutrals - Light */
+    --color-bg: #FAF8F5;
+    --color-surface: #FFFFFF;
+    --color-surface-subtle: #F4EFE6;
+    --color-surface-hover: #EFEAE0;
+    --color-border: #E5DDD0;
+    --color-border-subtle: #ECE5DA;
+    --color-text-main: #18241C;
+    --color-text-muted: #57685D;
+    --color-text-dim: #7E8F84;
+
+    /* Accent Presets: Default is Forest */
+    --accent-primary: #1D5337;
+    --accent-hover: #153E29;
+    --accent-light: #EBF4EF;
+    --accent-border: #BCD8C7;
+    --accent-text: #133D27;
+  }
+
+  [data-accent="sage"] {
+    --accent-primary: #2C6E56;
+    --accent-hover: #1E4F3D;
+    --accent-light: #EAF4F0;
+    --accent-border: #B7D9CC;
+    --accent-text: #194435;
+  }
+
+  [data-accent="terracotta"] {
+    --accent-primary: #A8492C;
+    --accent-hover: #86361D;
+    --accent-light: #FBEFEA;
+    --accent-border: #ECC9BD;
+    --accent-text: #782C15;
+  }
+
+  [data-accent="amber"] {
+    --accent-primary: #B26A18;
+    --accent-hover: #8D510E;
+    --accent-light: #FDF5E9;
+    --accent-border: #F2D5AD;
+    --accent-text: #784408;
+  }
+
+  .dark {
+    --color-bg: #0F1712;
+    --color-surface: #17241D;
+    --color-surface-subtle: #1E2E25;
+    --color-surface-hover: #263B30;
+    --color-border: #2C4235;
+    --color-border-subtle: #23352A;
+    --color-text-main: #F3F6F3;
+    --color-text-muted: #9BB0A3;
+    --color-text-dim: #6E8376;
+
+    --accent-primary: #34A86C;
+    --accent-hover: #45BF7F;
+    --accent-light: #163624;
+    --accent-border: #225638;
+    --accent-text: #A8E8C3;
+  }
+
+  .dark[data-accent="sage"] {
+    --accent-primary: #48B693;
+    --accent-hover: #5CC7A5;
+    --accent-light: #17382E;
+    --accent-border: #235445;
+    --accent-text: #B4EBD9;
+  }
+
+  .dark[data-accent="terracotta"] {
+    --accent-primary: #E07151;
+    --accent-hover: #E98A6F;
+    --accent-light: #3D1C13;
+    --accent-border: #5E2C1F;
+    --accent-text: #F8B5A2;
+  }
+
+  .dark[data-accent="amber"] {
+    --accent-primary: #E5983A;
+    --accent-hover: #EEAC5B;
+    --accent-light: #3D270C;
+    --accent-border: #633F13;
+    --accent-text: #F9D7A5;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-serif);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Utilities for Design Token Binding */
+.bg-app {
+  background-color: var(--color-bg);
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.bg-surface-subtle {
+  background-color: var(--color-surface-subtle);
+}
+.bg-surface-hover {
+  background-color: var(--color-surface-hover);
+}
+.border-app {
+  border-color: var(--color-border);
+}
+.border-app-subtle {
+  border-color: var(--color-border-subtle);
+}
+.text-main {
+  color: var(--color-text-main);
+}
+.text-muted-custom {
+  color: var(--color-text-muted);
+}
+.text-dim-custom {
+  color: var(--color-text-dim);
+}
+
+.bg-accent-main {
+  background-color: var(--accent-primary);
+}
+.hover\:bg-accent-hover:hover {
+  background-color: var(--accent-hover);
+}
+.bg-accent-light {
+  background-color: var(--accent-light);
+}
+.border-accent-main {
+  border-color: var(--accent-primary);
+}
+.border-accent-border {
+  border-color: var(--accent-border);
+}
+.text-accent-main {
+  color: var(--accent-primary);
+}
+.text-accent-contrast {
+  color: var(--accent-text);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-dim);
+}
